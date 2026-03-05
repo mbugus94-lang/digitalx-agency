@@ -3,11 +3,9 @@
   "version": "1.0.0",
   "description": "Premium Digital Marketing Agency Website",
   "scripts": {
-    "dev": "vercel dev",
-    "start": "vercel dev",
-    "build": "echo 'No build step required for static HTML'"
+    "start": "npx serve -s . -p 3000"
   },
-  "engines": {
-    "node": ">=18"
+  "dependencies": {
+    "serve": "^14.2.0"
   }
 }
