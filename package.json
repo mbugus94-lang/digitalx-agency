@@ -1,0 +1,13 @@
+{
+  "name": "digitalx-agency",
+  "version": "1.0.0",
+  "description": "Premium Digital Marketing Agency Website",
+  "scripts": {
+    "dev": "vercel dev",
+    "start": "vercel dev",
+    "build": "echo 'No build step required for static HTML'"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
