@@ -4,7 +4,22 @@
   "description": "Premium Digital Marketing Agency Website",
   "scripts": {
     "start": "npx serve -s . -p 3000",
-    "test": "node test/validate.js"
+    "test": "node test/validate.js",
+    "lint": "npx html-validate index.html"
+  },
+  "keywords": ["agency", "website", "marketing", "digital"],
+  "author": "DigitalX Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mbugus94-lang/digitalx-agency.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mbugus94-lang/digitalx-agency/issues"
+  },
+  "homepage": "https://github.com/mbugus94-lang/digitalx-agency#readme",
+  "engines": {
+    "node": ">=16.0.0"
   },
   "dependencies": {
     "serve": "^14.2.0"
