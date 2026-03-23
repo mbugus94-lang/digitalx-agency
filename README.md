@@ -88,13 +88,39 @@ cp .env.example .env
 
 ## 🧪 Testing
 
-```bash
-# Run accessibility audit (requires Lighthouse CLI)
-npx lighthouse http://localhost:3000 --output=html
+This project includes comprehensive tests:
 
-# Validate HTML
-npx html-validate index.html
+### Accessibility Tests
+```bash
+npm test
 ```
+
+Tests ensure:
+- Proper HTML lang attributes
+- Alt text on images
+- Semantic heading hierarchy
+- Skip-to-content links
+
+### SEO Tests
+- Meta description and keywords
+- Open Graph tags
+- Canonical links
+
+### Performance Tests
+- Inline CSS to prevent render blocking
+
+### HTML Validation
+```bash
+npm run lint
+```
+
+## 🔧 CI/CD
+
+GitHub Actions runs on every push:
+- HTML validation
+- Accessibility tests
+- Lighthouse performance audit
+- Code formatting checks
 
 ---
 
