@@ -1,10 +1,10 @@
 {
   "name": "digitalx-agency",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Premium Digital Marketing Agency Website",
   "scripts": {
     "start": "npx serve -s . -p 3000",
-    "test": "node test/validate.js",
+    "test": "jest __tests__/",
     "lint": "npx html-validate index.html",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
@@ -27,6 +27,8 @@
     "serve": "^14.2.6"
   },
   "devDependencies": {
-    "prettier": "^3.3.3"
+    "prettier": "^3.3.3",
+    "jest": "^30.3.0",
+    "html-validate": "^9.5.2"
   }
 }
