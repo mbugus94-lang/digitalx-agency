@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/mbugus94-lang/digitalx-agency#readme",
   "engines": {
-    "node": ">=16.0.0"
+    "node": ">=18.0.0"
   },
   "dependencies": {
     "serve": "^14.2.6"

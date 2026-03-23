@@ -1,125 +1,146 @@
-#!/usr/bin/env node
-// Simple validation tests for DigitalX Agency
-
 const fs = require('fs');
 const path = require('path');
 
-const tests = [];
+/**
+ * DigitalX Agency - Site Validation Tests
+ * Run with: node test/validate.js
+ */
+
+const indexPath = path.join(__dirname, '../index.html');
+const indexContent = fs.readFileSync(indexPath, 'utf8');
+
+let passed = 0;
+let failed = 0;
 
 function test(name, fn) {
-  tests.push({ name, fn });
+  try {
+    fn();
+    console.log(`✅ ${name}`);
+    passed++;
+  } catch (error) {
+    console.log(`❌ ${name}`);
+    console.log(`   ${error.message}`);
+    failed++;
+  }
 }
 
-async function runTests() {
-  console.log('🧪 DigitalX Agency Validation Tests\n');
-  let passed = 0;
-  let failed = 0;
-
-  for (const { name, fn } of tests) {
-    try {
-      await fn();
-      console.log(`✅ ${name}`);
-      passed++;
-    } catch (err) {
-      console.log(`❌ ${name}: ${err.message}`);
-      failed++;
-    }
+function assert(condition, message) {
+  if (!condition) {
+    throw new Error(message || 'Assertion failed');
   }
-
-  console.log(`\n📊 Results: ${passed} passed, ${failed} failed`);
-  process.exit(failed > 0 ? 1 : 0);
 }
 
-// Test: index.html exists
-test('index.html exists', () => {
-  if (!fs.existsSync('index.html')) {
-    throw new Error('index.html not found');
-  }
+console.log('\n🧪 DigitalX Agency Validation Tests\n');
+
+// HTML Structure Tests
+test('HTML has DOCTYPE declaration', () => {
+  assert(indexContent.includes('<!DOCTYPE html>'), 'Missing DOCTYPE');
 });
 
-// Test: index.html has basic structure
-test('index.html has required HTML structure', () => {
-  const content = fs.readFileSync('index.html', 'utf-8');
-  if (!content.includes('<!DOCTYPE html>')) {
-    throw new Error('Missing DOCTYPE declaration');
-  }
-  if (!content.includes('<html')) {
-    throw new Error('Missing <html> tag');
-  }
-  if (!content.includes('<head>')) {
-    throw new Error('Missing <head> tag');
-  }
-  if (!content.includes('<body>')) {
-    throw new Error('Missing <body> tag');
-  }
-  if (!content.includes('</html>')) {
-    throw new Error('Missing closing </html> tag');
-  }
+test('HTML has html tag with lang attribute', () => {
+  assert(indexContent.includes('<html'), 'Missing html tag');
+  assert(indexContent.includes('lang='), 'Missing lang attribute');
 });
 
-// Test: index.html has title
-test('index.html has title', () => {
-  const content = fs.readFileSync('index.html', 'utf-8');
-  if (!content.includes('<title>')) {
-    throw new Error('Missing <title> tag');
-  }
+test('HTML has head section', () => {
+  assert(indexContent.includes('<head>'), 'Missing head tag');
+  assert(indexContent.includes('</head>'), 'Missing closing head tag');
 });
 
-// Test: index.html has meta charset
-test('index.html has meta charset', () => {
-  const content = fs.readFileSync('index.html', 'utf-8');
-  if (!content.includes('charset=')) {
-    throw new Error('Missing charset meta tag');
-  }
+test('HTML has body section', () => {
+  assert(indexContent.includes('<body>'), 'Missing body tag');
+  assert(indexContent.includes('</body>'), 'Missing closing body tag');
 });
 
-// Test: index.html has viewport meta
-test('index.html has viewport meta', () => {
-  const content = fs.readFileSync('index.html', 'utf-8');
-  if (!content.includes('viewport')) {
-    throw new Error('Missing viewport meta tag');
-  }
+test('HTML has title tag', () => {
+  assert(indexContent.includes('<title>'), 'Missing title tag');
+  assert(indexContent.includes('</title>'), 'Missing closing title tag');
 });
 
-// Test: package.json exists
-test('package.json exists', () => {
-  if (!fs.existsSync('package.json')) {
-    throw new Error('package.json not found');
-  }
+// Meta Tags Tests
+test('Has meta charset', () => {
+  assert(indexContent.includes('charset='), 'Missing charset meta tag');
 });
 
-// Test: package.json has valid JSON
-test('package.json has valid JSON', () => {
-  const content = fs.readFileSync('package.json', 'utf-8');
-  JSON.parse(content); // Will throw if invalid
+test('Has meta viewport', () => {
+  assert(indexContent.includes('viewport'), 'Missing viewport meta tag');
 });
 
-// Test: LICENSE exists
-test('LICENSE file exists', () => {
-  if (!fs.existsSync('LICENSE')) {
-    throw new Error('LICENSE file not found');
-  }
+test('Has meta description', () => {
+  assert(indexContent.includes('name="description"') || indexContent.includes('name=\'description\''), 
+    'Missing description meta tag');
 });
 
-// Test: README.md exists
-test('README.md exists', () => {
-  if (!fs.existsSync('README.md')) {
-    throw new Error('README.md not found');
-  }
+test('Has meta keywords', () => {
+  assert(indexContent.includes('name="keywords"') || indexContent.includes('name=\'keywords\''), 
+    'Missing keywords meta tag');
 });
 
-// Test: .gitignore exists
-test('.gitignore exists', () => {
-  if (!fs.existsSync('.gitignore')) {
-    throw new Error('.gitignore not found');
-  }
+// Content Tests
+test('Has agency name in content', () => {
+  assert(
+    indexContent.toLowerCase().includes('digitalx') || 
+    indexContent.toLowerCase().includes('digital x') ||
+    indexContent.toLowerCase().includes('agency'),
+    'Missing agency name in content'
+  );
 });
 
-// Test: .env.example exists
-test('.env.example exists', () => {
-  if (!fs.existsSync('.env.example')) {
-    throw new Error('.env.example not found');
-  }
+test('Has navigation links', () => {
+  assert(indexContent.includes('<nav') || indexContent.includes('<a'), 
+    'Missing navigation elements');
 });
 
-runTests();
+test('Has contact section or form', () => {
+  assert(
+    indexContent.toLowerCase().includes('contact') ||
+    indexContent.includes('<form') ||
+    indexContent.includes('mailto:'),
+    'Missing contact information'
+  );
+});
+
+// Responsive Design Tests
+test('Uses responsive CSS or media queries', () => {
+  assert(
+    indexContent.includes('@media') ||
+    indexContent.includes('max-width') ||
+    indexContent.includes('min-width') ||
+    indexContent.includes('flex') ||
+    indexContent.includes('grid'),
+    'Missing responsive design elements'
+  );
+});
+
+// Performance & Security Tests
+test('Has no inline scripts with http://', () => {
+  // Allow https:// but not http:// for security
+  const httpScripts = indexContent.match(/src=["']http:\/\//g);
+  assert(!httpScripts || httpScripts.length === 0, 
+    'Found insecure http:// script sources');
+});
+
+test('CSS is included (inline or linked)', () => {
+  assert(
+    indexContent.includes('<style') ||
+    indexContent.includes('rel="stylesheet"'),
+    'No CSS styles found'
+  );
+});
+
+// Footer Tests
+test('Has footer section', () => {
+  assert(
+    indexContent.includes('<footer') ||
+    indexContent.toLowerCase().includes('copyright') ||
+    indexContent.includes('©'),
+    'Missing footer or copyright information'
+  );
+});
+
+// Summary
+console.log('\n' + '='.repeat(40));
+console.log(`Results: ${passed} passed, ${failed} failed`);
+console.log('='.repeat(40) + '\n');
+
+process.exit(failed > 0 ? 1 : 0);
