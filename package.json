@@ -5,7 +5,9 @@
   "scripts": {
     "start": "npx serve -s . -p 3000",
     "test": "node test/validate.js",
-    "lint": "npx html-validate index.html"
+    "lint": "npx html-validate index.html",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "keywords": ["agency", "website", "marketing", "digital"],
   "author": "DigitalX Team",
@@ -23,5 +25,8 @@
   },
   "dependencies": {
     "serve": "^14.2.6"
+  },
+  "devDependencies": {
+    "prettier": "^3.3.3"
   }
 }
