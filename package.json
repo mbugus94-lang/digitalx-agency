@@ -3,8 +3,9 @@
   "version": "1.0.4",
   "description": "Premium Digital Marketing Agency Website",
   "scripts": {
-    "start": "npx serve -s . -p 3000",
+    "start": "npx serve -s . -p ${PORT:-3000}",
     "test": "jest __tests__/ && node test/validate.js && node test/seo.test.js",
+    "validate": "npm run lint && npm run test",
     "lint": "npx html-validate index.html",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
