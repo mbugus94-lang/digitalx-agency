@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- Comprehensive SEO test suite (10 tests for meta tags, semantic HTML, accessibility)
+- CONTRIBUTING.md with contribution guidelines
+
+### Changed
+- Updated test script to include SEO validation
+
 ## [1.0.1] - 2026-03-22
 
 ### Added

@@ -4,7 +4,7 @@
   "description": "Premium Digital Marketing Agency Website",
   "scripts": {
     "start": "npx serve -s . -p 3000",
-    "test": "node test/validate.js",
+    "test": "node test/validate.js && node test/seo.test.js",
     "lint": "npx html-validate index.html"
   },
   "keywords": ["agency", "website", "marketing", "digital"],

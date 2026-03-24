@@ -1,79 +1,76 @@
-# Contributing Guidelines
+# Contributing to DigitalX Agency
 
-Thank you for your interest in contributing to this project! We welcome contributions from the community.
+Thank you for your interest in contributing to DigitalX Agency! We welcome contributions from the community.
 
 ## How to Contribute
 
-### Reporting Bugs
+### Reporting Issues
 
-Before creating a bug report, please check the existing issues to see if the problem has already been reported. When creating a bug report, please include:
+If you find a bug or have a suggestion:
 
-- A clear, descriptive title
-- Steps to reproduce the issue
-- Expected behavior vs actual behavior
-- Your environment (OS, Node.js/Python version, etc.)
-- Any error messages or screenshots
+1. Check if the issue already exists in our [issue tracker](https://github.com/mbugus94-lang/digitalx-agency/issues)
+2. If not, create a new issue with:
+   - Clear title and description
+   - Steps to reproduce (for bugs)
+   - Expected vs actual behavior
+   - Screenshots if applicable
 
-### Suggesting Enhancements
+### Making Changes
 
-Enhancement suggestions are welcome! Please provide:
+1. **Fork the repository**
+   ```bash
+   git clone https://github.com/mbugus94-lang/digitalx-agency.git
+   cd digitalx-agency
+   ```
 
-- A clear description of the feature
-- Why it would be useful
-- Possible implementation approach (if you have ideas)
+2. **Create a branch**
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
 
-### Pull Requests
+3. **Make your changes**
+   - Follow existing code style
+   - Keep changes focused and minimal
+   - Test your changes locally
 
-1. Fork the repository
-2. Create a new branch for your feature (`git checkout -b feature/amazing-feature`)
-3. Make your changes
-4. Run tests (if available)
-5. Commit your changes (`git commit -m 'Add amazing feature'`)
-6. Push to your fork (`git push origin feature/amazing-feature`)
-7. Open a Pull Request
+4. **Test**
+   ```bash
+   npm test
+   ```
 
-### Development Setup
+5. **Commit**
+   ```bash
+   git add .
+   git commit -m "feat: add your feature description"
+   ```
 
-```bash
-# Clone your fork
-git clone https://github.com/YOUR_USERNAME/REPO_NAME.git
-cd REPO_NAME
+6. **Push and create PR**
+   ```bash
+   git push origin feature/your-feature-name
+   ```
 
-# Install dependencies
-npm install
-# or
-pip install -r requirements.txt
+### Commit Message Guidelines
 
-# Run tests
-npm test
-# or
-pytest
-```
+- `feat:` New feature
+- `fix:` Bug fix
+- `docs:` Documentation changes
+- `style:` Formatting changes
+- `refactor:` Code restructuring
+- `test:` Adding tests
+- `chore:` Maintenance tasks
 
-### Code Style
+### Code Standards
 
-- Follow the existing code style
-- Use meaningful variable and function names
-- Add comments for complex logic
-- Keep functions focused and small
+- Use semantic HTML
+- Follow CSS best practices
+- Ensure responsive design
+- Test on multiple browsers
+- Validate HTML before submitting
 
-### Commit Messages
+### Questions?
 
-- Use the present tense ("Add feature" not "Added feature")
-- Use the imperative mood ("Move cursor to..." not "Moves cursor to...")
-- Reference issues and pull requests liberally after the first line
+Contact us at mbugus94@gmail.com
 
-## Code of Conduct
+## License
 
-This project adheres to a code of conduct. By participating, you are expected to uphold this code:
-
-- Be respectful and inclusive
-- Welcome newcomers
-- Accept constructive criticism gracefully
-- Focus on what's best for the community
-
-## Questions?
-
-Feel free to open an issue for questions or join discussions.
-
-Thank you for contributing!
+By contributing, you agree that your contributions will be licensed under the MIT License.
