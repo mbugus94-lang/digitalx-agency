@@ -5,6 +5,15 @@
   <em>Modern, responsive, and SEO-optimized web presence</em>
 </p>
 
+<p align="center">
+  <img src="https://img.shields.io/badge/Version-1.0.3-blue" alt="Version">
+  <img src="https://img.shields.io/badge/License-MIT-green" alt="License">
+  <img src="https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white" alt="HTML5">
+  <img src="https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white" alt="CSS3">
+  <img src="https://img.shields.io/badge/Vercel-Ready-black?logo=vercel" alt="Vercel">
+  <img src="https://img.shields.io/github/actions/workflow/status/mbugus94-lang/digitalx-agency/ci.yml" alt="CI Status">
+</p>
+
 ---
 
 ## 🚀 Quick Start
