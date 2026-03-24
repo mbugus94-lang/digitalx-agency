@@ -18,6 +18,25 @@
 
 ## 🚀 Quick Start
 
+## Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/mbugus94-lang/digitalx-agency.git
+cd digitalx-agency
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Copy the environment variables file:
+```bash
+cp .env.example .env
+# Edit .env with your configuration
+```
+
 ```bash
 # Clone the repository
 git clone https://github.com/mbugus94-lang/digitalx-agency.git
