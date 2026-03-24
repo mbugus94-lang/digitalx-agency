@@ -14,6 +14,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Updated test script to include SEO validation alongside Jest tests
 
+## [1.0.5] - 2026-03-24
+
+### Changed
+- Updated version to 1.0.5 for maintenance release
+- All dependencies remain current and secure
+
 ## [1.0.4] - 2026-03-24
 
 ### Added

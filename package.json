@@ -1,6 +1,6 @@
 {
   "name": "digitalx-agency",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Premium Digital Marketing Agency Website",
   "scripts": {
     "start": "npx serve -s . -p ${PORT:-3000}",
