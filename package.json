@@ -30,6 +30,6 @@
   "devDependencies": {
     "prettier": "^3.5.3",
     "jest": "^30.3.0",
-    "html-validate": "^9.5.2"
+    "html-validate": "^10.11.2"
   }
 }
