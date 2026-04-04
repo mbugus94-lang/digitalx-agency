@@ -11,7 +11,7 @@
   <img src="https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white" alt="HTML5">
   <img src="https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white" alt="CSS3">
   <img src="https://img.shields.io/badge/Vercel-Ready-black?logo=vercel" alt="Vercel">
-  <img src="[[Image 1: unavailable (https://img.shields.io/github/actions/workflow/status/mbugus94-lang/digitalx-agency/ci.yml)]]" alt="CI Status">
+  <img src="https://img.shields.io/github/actions/workflow/status/mbugus94-lang/digitalx-agency/ci.yml?label=CI" alt="CI Status">
 </p>
 
 ---
