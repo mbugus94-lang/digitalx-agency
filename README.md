@@ -16,6 +16,16 @@
 
 ---
 
+## 🎬 Demo
+
+![DigitalX Agency Landing Page Architecture](docs/digitalx-agency-demo.png)
+
+**Architecture Overview:** The ReachIQ landing page is a comprehensive 1,096-line HTML5/CSS3 landing page featuring an animated hero section with gradient backgrounds, four core service offerings (AI Ad Management, Performance Creative, Conversion Systems, Growth Strategy), results showcase with case study metrics, tiered pricing (Starter $2,500/mo, Growth $5,000/mo, Enterprise Custom), and full conversion tracking integration with Meta Pixel and GA4.
+
+📖 **[View Full Demo Guide](DEMO.md)** - Complete walkthrough with visual preview and feature breakdown
+
+---
+
 ## 🚀 Quick Start
 
 ### Installation
