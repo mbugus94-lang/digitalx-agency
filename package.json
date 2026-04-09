@@ -1,16 +1,17 @@
 {
   "name": "digitalx-agency",
-  "version": "1.0.5",
-  "description": "Premium Digital Marketing Agency Website",
+  "version": "1.0.6",
+  "description": "Premium Digital Marketing Agency Website with Express API",
+  "main": "server/index.js",
   "scripts": {
-    "start": "npx serve -s . -p ${PORT:-3000}",
-    "test": "jest __tests__/ && node test/validate.js && node test/seo.test.js",
-    "validate": "npm run lint && npm run test",
+    "start": "node server/index.js",
+    "dev": "nodemon server/index.js",
+    "test": "jest __tests__/",
     "lint": "npx html-validate index.html",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },
-  "keywords": ["agency", "website", "marketing", "digital"],
+  "keywords": ["agency", "website", "marketing", "digital", "express", "api"],
   "author": "DigitalX Team",
   "license": "MIT",
   "repository": {
@@ -25,11 +26,18 @@
     "node": ">=18.0.0"
   },
   "dependencies": {
-    "serve": "^14.2.6"
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "express-rate-limit": "^7.4.0",
+    "helmet": "^8.0.0",
+    "nodemailer": "^6.9.14",
+    "uuid": "^10.0.0"
   },
   "devDependencies": {
-    "prettier": "^3.5.3",
-    "jest": "^30.3.0",
-    "html-validate": "^9.5.2"
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.4",
+    "prettier": "^3.3.3",
+    "supertest": "^7.0.0"
   }
 }
